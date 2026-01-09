@@ -1,106 +1,21 @@
-import React from "react";
 import MapCell from "./MapCell";
-import { url } from "inspector";
+import Image from "next/image";
+import MapImage from "@/public/map-two.png";
 
 const Map = () => {
+  const mapGrid = Array.from({ length: 784 }, (_, i) => i + 1);
   return (
-    <div className="flex max-w-[1350px] flex-wrap bg-[url(/map-one.png)] bg-no-repeat object-cover aspect-square">
-      <MapCell />
-      <MapCell />
-      <MapCell />
-      <MapCell />
-      <MapCell />
-      <MapCell />
-      <MapCell />
-      <MapCell />
-      <MapCell />
-      <MapCell />
-      <MapCell />
-      <MapCell />
-      <MapCell />
-      <MapCell />
-      <MapCell />
-      <MapCell />
-      <MapCell />
-      <MapCell />
-      <MapCell />
-      <MapCell />
-      <MapCell />
-      <MapCell />
-      <MapCell />
-      <MapCell />
-      <MapCell />
-      <MapCell />
-      <MapCell />
-      <MapCell />
-      <MapCell />
-      <MapCell />
-      <MapCell />
-      <MapCell />
-      <MapCell />
-      <MapCell />
-      <MapCell />
-      <MapCell />
-      <MapCell />
-      <MapCell />
-      <MapCell />
-      <MapCell />
-      <MapCell />
-      <MapCell />
-      <MapCell />
-      <MapCell />
-      <MapCell />
-      <MapCell />
-      <MapCell />
-      <MapCell />
-      <MapCell />
-      <MapCell />
-      <MapCell />
-      <MapCell />
-      <MapCell />
-      <MapCell />
-      <MapCell />
-      <MapCell />
-      <MapCell />
-      <MapCell />
-      <MapCell />
-      <MapCell />
-      <MapCell />
-      <MapCell />
-      <MapCell />
-      <MapCell />
-      <MapCell />
-      <MapCell />
-      <MapCell />
-      <MapCell />
-      <MapCell />
-      <MapCell />
-      <MapCell />
-      <MapCell />
-      <MapCell />
-      <MapCell />
-      <MapCell />
-      <MapCell />
-      <MapCell />
-      <MapCell />
-      <MapCell />
-      <MapCell />
-      <MapCell />
-      <MapCell />
-      <MapCell />
-      <MapCell />
-      <MapCell />
-      <MapCell />
-      <MapCell />
-      <MapCell />
-      <MapCell />
-      <MapCell />
-      <MapCell />
-      <MapCell />
-      <MapCell />
-      <MapCell />
-      <MapCell />
-      <MapCell />
+    <div className="relative w-270 aspect-square">
+      <div className="absolute left-0 top-0">
+        <div className="relative">
+          <Image src={MapImage} alt="" />
+          <div className="absolute top-24 left-24 flex max-w-4xl flex-wrap aspect-square">
+            {mapGrid.map((cell) => (
+              <MapCell key={cell} />
+            ))}
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
